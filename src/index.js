@@ -12,9 +12,9 @@ require('./startup/database');
 require('./startup/routes')(app);
 require("./components/routes/auth.routes")(app);
 //settings
-app.set('port' , process.env.PORT ||  3000);
+app.set('port' , process.env.PORT ||  3005);
 
-app.listen(3000, function () {
+app.listen(3002, function () {
   console.log("3000!");
 });
 

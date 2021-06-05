@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { config } = require('../startup/config');
 
 mongoose.connect("mongodb+srv://fran:1234@francluster.x8k69.mongodb.net/ChatApp?retryWrites=true&w=majority" , { useNewUrlParser: true , 
 useUnifiedTopology: true})
