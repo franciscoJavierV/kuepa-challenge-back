@@ -8,7 +8,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 require('./startup/database');
-// Configuración de routers
+// Configuración de routes
 require('./startup/routes')(app);
 require("./components/routes/auth.routes")(app);
 //settings
