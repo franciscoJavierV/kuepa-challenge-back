@@ -18,7 +18,9 @@ app.set('port' , process.env.PORT ||  3000);
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send( res.status(200).json({
+message:"Hola desde el backend de chat kuepa",
+  }))
 })
 
 app.listen(port, function () {
