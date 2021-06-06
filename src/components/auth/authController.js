@@ -1,5 +1,6 @@
 const usersService = require('../users/usersService');
 
+//endpoint response 
 async function provider (req, res, next){
   const { body } = req;
   try {

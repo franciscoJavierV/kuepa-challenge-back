@@ -5,18 +5,7 @@ async function findByEmail(emailB) {
   return user;
 }
 
-async function findById(userid) {
-  const user = await User.findById(userid);
-  return user;
-}
-
-async function getAll(query) {
-  const users = User.find(query);
-  return users;
-}
-
 async function createUser( user ) {
-  console.log(user)
   const { name, email, role, picture } = user.user;
   console.log("nuevo nombre",picture)
   const createUserId = await User.create({
@@ -27,7 +16,7 @@ async function createUser( user ) {
   });
   return createUserId;
 }
-
+//validating facebook login 
 async function getOrCreateUser(users) {
   const {name, email, role, picture } = users.body
   const queriedUser = await findByEmail(email);
@@ -49,7 +38,5 @@ async function getOrCreateUser(users) {
 module.exports = {
   createUser,
   findByEmail,
-  findById,
-  getAll,
   getOrCreateUser,
 };

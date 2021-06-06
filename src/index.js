@@ -7,13 +7,22 @@ app.use(CORS());
 app.use(morgan('dev'));
 app.use(express.json());
 
+const port = process.env.PORT ||  3000
+
 require('./startup/database');
-// Configuración de routers
+// Configuración de routes
 require('./startup/routes')(app);
 require("./components/routes/auth.routes")(app);
 //settings
 app.set('port' , process.env.PORT ||  3000);
 
-app.listen(3000, function () {
+
+app.get('/', (req, res) => {
+  res.send( res.status(200).json({
+message:"Hola desde el backend de chat kuepa",
+  }))
+})
+
+app.listen(port, function () {
   console.log("3000!");
 });
